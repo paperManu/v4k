@@ -17,8 +17,22 @@
 // along with Splash.  If not, see <http://www.gnu.org/licenses/>.
 //
 
+#include <stdio.h>
+
+#include "./engine.hpp"
+
 /*************/
 int main(int, char**)
 {
+    Engine engine;
+    if (!engine.init())
+        return 1;
+    
+    while (true)
+        if (!engine.step())
+            break;
+
+    engine.cleanup();
+
     return 0;
 }

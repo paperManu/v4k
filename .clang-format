@@ -1,0 +1,14 @@
+BasedOnStyle : LLVM
+AlignTrailingComments : true
+AlwaysBreakTemplateDeclarations : true
+AlignAfterOpenBracket : DontAlign
+AllowShortFunctionsOnASingleLine : Inline
+BinPackArguments : false
+BinPackParameters : false
+BreakBeforeBraces : Allman
+BreakConstructorInitializersBeforeComma : true
+ColumnLimit : 180
+IndentWidth : 4
+PointerAlignment : Left
+Standard : Cpp11
+TabWidth : 4

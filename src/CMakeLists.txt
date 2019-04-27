@@ -21,16 +21,20 @@
 # Enable all warnings as errors
 #
 add_definitions(-Wall -Wextra -Werror)
-add_definitions(-Wno-unknown-pragmas)
+add_definitions(-Wno-unknown-pragmas -Wno-missing-field-initializers)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DGLM_ENABLE_EXPERIMENTAL")
 
-include_directories(./)
-include_directories(${GLFW_INCLUDE_DIRS})
-include_directories(${GLM_INCLUDE_DIRS})
-include_directories(${VULKAN_INCLUDE_DIRS})
+include_directories(
+    ./
+    ${GLFW_INCLUDE_DIRS}
+    ${GLM_INCLUDE_DIRS}
+    ${VULKAN_INCLUDE_DIRS}
+)
 
-link_directories(${GLFW_LIBRARY_DIRS})
-link_directories(${VULKAN_LIBRARY_DIRS})
+link_directories(
+    ${GLFW_LIBRARY_DIRS}
+    ${VULKAN_LIBRARY_DIRS}
+)
 
 #
 # Targets
@@ -39,4 +43,9 @@ add_executable(v4k)
 
 target_sources(v4k PRIVATE
   v4k.cpp
+)
+
+target_link_libraries(v4k
+    ${GLFW_LIBRARIES}
+    ${VULKAN_LIBRARIES}
 )
