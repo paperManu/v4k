@@ -43,6 +43,7 @@ add_executable(v4k)
 
 target_sources(v4k PRIVATE
   v4k.cpp
+  engine.cpp
 )
 
 target_link_libraries(v4k
